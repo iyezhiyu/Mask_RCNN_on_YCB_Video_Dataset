@@ -3,7 +3,11 @@
 """
 Created on Sun Jul  7 20:44:54 2019
 
-@author: zhiyu
+@author: Zhiyu Ye
+
+Email: yezhiyu@hotmail.com
+
+In London, the United Kingdom
 """
 
 from PIL import Image
