@@ -3,7 +3,11 @@
 """
 Created on Mon Jul 15 14:42:15 2019
 
-@author: zhiyu
+@author: Zhiyu Ye
+
+Email: yezhiyu@hotmail.com
+
+In London, the United Kingdom
 """
 
 import os
