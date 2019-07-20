@@ -96,7 +96,7 @@ Because of the sole background of the synthetic data, the generalization perform
       OUTPUT_DIR out_dir
 ```
 
-## Detectron
+## Detection
 * Detect the images specified in image_sets/val.txt of the YCB Video Dataset.
 ```
     python tools/infer_simple.py \
