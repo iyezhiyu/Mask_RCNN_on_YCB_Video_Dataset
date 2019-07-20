@@ -3,7 +3,11 @@
 """
 Created on Fri Jul  5 22:58:48 2019
 
-@author: zhiyu
+@author: Zhiyu Ye
+
+Email: yezhiyu@hotmail.com
+
+In London, the United Kingdom
 """
 """
 Using the synthetic images in the YCB Video Dataset to train a Mask R-CNN.
