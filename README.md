@@ -16,7 +16,7 @@ Because of the sole background of the synthetic data, the generalization perform
 * data_syn_annotations_generator.py: the generation of the annotations of the synthetic data is also provided.
 
 ## Files in the [Detectron](https://github.com/iyezhiyu/Detectron) which need to modify
-* The four files need to be changed as described below is also uploaded to files folder of this repository.
+* The five files need to be changed as described below is also uploaded to the files folder of this repository.
 ### $Detectron/detectron/datasets/dataset_catalog.py
 * In the _DATASETS dictionary, add
 ```
@@ -49,8 +49,8 @@ Because of the sole background of the synthetic data, the generalization perform
       MAX_SIZE: 640 
 ```
 * Also comment all the codes in the TEST of the configuration file, because I do the inference using infer_simple.py
-* Others parameters such as NUM_GPUS, BASE_LR, MAX_ITER, etc., can be modified if needed
-* It is recommended that the BASE_LR should be set to a smaller value, such as 0.001 in order not to diverging
+* Others parameters such as NUM_GPUS, BASE_LR, MAX_ITER, etc., can be modified if needed.
+* It is recommended that the BASE_LR should be set to a smaller value, such as 0.001, in order to addressing the "Loss is NaN" error.
 ### $Detectron/tools/infer_simple.py
 #### In order to output a json file contains the segmentations results, some codes should be added.
 * In the begging of the program
@@ -92,6 +92,15 @@ Because of the sole background of the synthetic data, the generalization perform
     with open(args.output_dir + '/annotations.json', 'w') as outfile:
         json.dump(json_output, outfile)
 ```
+### $Detectron/detectron/utils/env.py
+* In order to addressing the error of "yaml.constructor.ConstructorError", replace
+```
+    yaml_load = yaml.load
+```
+* with
+```
+    yaml_load = lambda x: yaml.load(x, Loader = yaml.Loader)
+```
 
 ## Training Step
 * In the $Detectron directory
@@ -113,7 +122,7 @@ Because of the sole background of the synthetic data, the generalization perform
 ```
 
 ## Results
-* I train for 100,000 iterations, and the detection results are quite well for bounding boxes, masks and categories.
+* I train for 100, 000 iterations, and the detection results are quite well for bounding boxes, masks and categories.
 <div align="center">
   <img src="images/detect_result1.jpg" width="640px" />
   <p>Detection Result Example 1</p>
