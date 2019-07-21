@@ -7,6 +7,10 @@ There are two choices for the training data, one is the synthetic data (data_syn
 
 Because of the sole background of the synthetic data, the generalization performance of the model trained by the synthetic data is very poor. So the information below is about training the model using the images specified in image_sets/train.txt of the YCB Video Dataset.
 
+## Environment
+* [INSTALL.md](https://github.com/iyezhiyu/Detectron/blob/master/INSTALL.md) provides the information about the requirements for using Detectron.
+* The requirements for the annotation genereation are opencv and shapely.
+
 ## Annotation Generation
 * video_data_annotations_generator.py: generate the annotations as the format of the [COCO Dataset](http://cocodataset.org/#home).
 * data_syn_annotations_generator.py: the generation of the annotations of the synthetic data is also provided.
@@ -90,6 +94,7 @@ Because of the sole background of the synthetic data, the generalization perform
 ```
 
 ## Training Step
+* In the $Detectron directory
 ```
     python tools/train_net.py \
       --cfg configs/12_2017_baselines/e2e_mask_rcnn_R-101-FPN_2x.yaml \
@@ -104,7 +109,7 @@ Because of the sole background of the synthetic data, the generalization perform
       --output-dir out_dir \
       --image-ext png \
       --wts path to/model_final.pkl \
-      path to images to detect
+      path_to_images_to_detect
 ```
 
 ## Results
