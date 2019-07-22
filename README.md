@@ -1,21 +1,21 @@
 # Mask RCNN on YCB Video Dataset
 
 ## Introduction
-This project aims to use the [YCB Video Dataset](https://rse-lab.cs.washington.edu/projects/posecnn/) to train a Mask RCNN using [Detectron](https://github.com/iyezhiyu/Detectron) of the Facebook AI Research.
+This project aims to use the [YCB Video Dataset](https://rse-lab.cs.washington.edu/projects/posecnn/) to train a Mask RCNN using [Detectron](https://github.com/facebookresearch/Detectron) of the Facebook AI Research.
 
 There are two choices for the training data, one is the synthetic data (data_syn) in the YCB Video Dataset, and the other is the training data specified in image_sets/train.txt of the YCB Video Dataset.
 
 Because of the sole background of the synthetic data, the generalization performance of the model trained by the synthetic data is very poor. So the information below is about training the model using the images specified in image_sets/train.txt of the YCB Video Dataset.
 
 ## Environment
-* [INSTALL.md](https://github.com/iyezhiyu/Detectron/blob/master/INSTALL.md) provides the information about the requirements for using Detectron.
+* [INSTALL.md](https://github.com/facebookresearch/Detectron/blob/master/INSTALL.md) provides the information about the requirements for using Detectron.
 * The requirements for the annotation genereation are opencv and shapely.
 
 ## Annotation Generation
 * video_data_annotations_generator.py: generate the annotations as the format of the [COCO Dataset](http://cocodataset.org/#home).
 * data_syn_annotations_generator.py: the generation of the annotations of the synthetic data is also provided.
 
-## Files in the [Detectron](https://github.com/iyezhiyu/Detectron) which need to modify
+## Files in the [Detectron](https://github.com/facebookresearch/Detectron) which need to modify
 * The five files need to be changed as described below is also uploaded to the files folder of this repository.
 ### $Detectron/detectron/datasets/dataset_catalog.py
 * In the _DATASETS dictionary, add
