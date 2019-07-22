@@ -49,7 +49,7 @@ Because of the sole background of the synthetic data, the generalization perform
       MAX_SIZE: 640 
 ```
 * Also comment all the codes in the TEST of the configuration file, because I do the inference using infer_simple.py
-* Others parameters such as NUM_GPUS, BASE_LR, MAX_ITER, etc., can be modified if needed.
+* Other parameters such as NUM_GPUS, BASE_LR, MAX_ITER, etc., can be modified if needed.
 * It is recommended that the BASE_LR should be set to a smaller value, such as 0.001, in order to addressing the "Loss is NaN" error.
 ### $Detectron/tools/infer_simple.py
 #### In order to output a json file contains the segmentations results, some codes should be added.
@@ -122,7 +122,7 @@ Because of the sole background of the synthetic data, the generalization perform
 ```
 
 ## Results
-* I train for 100, 000 iterations, and the detection results are quite well for bounding boxes, masks and categories.
+* I train the model for 100, 000 iterations, and the detection results are quite well for bounding boxes, masks and categories.
 <div align="center">
   <img src="images/detect_result1.jpg" width="640px" />
   <p>Detection Result Example 1</p>
